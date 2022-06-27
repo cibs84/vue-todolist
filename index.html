@@ -7,14 +7,33 @@
     <title>Document</title>
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     
     <!-- Vue.js -->
     <div id="root">
+        
+        <!-- Form - Add Todo -->
+        <div id="form-add">
+            <input type="text" placeholder="Nuovo Todo">
+            <button>Aggiungi</button>
+        </div>
 
-        <h1>{{dataTest}}</h1>
+        <!-- Todos List -->
+        <div class="container">
+            <ul id="todos-list">
+
+                <!-- Todos Item -->
+                <li v-for="(singleTodo, indexSingleTodo) in allTodos" class="todos-item" :class="{ 'checked': singleTodo.done === true }" @click="toggleClassChecked(indexSingleTodo)">
+                    {{singleTodo.text}}
+                    <span>
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+                </li>
+            </ul>
+        </div>
 
     </div>
     <!--------------- end - Vue.js --------------->

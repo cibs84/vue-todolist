@@ -4,7 +4,53 @@
     margin: 0;
     padding: 0;
 }
+ul {
+    list-style-type: none;
+}
 
 
 /* COMMON */
+body {
+    font-size: 1.5rem;
+}
+.container {
+    width: 70%;
+    margin: 0 auto;
+}
+.checked {
+    text-decoration: line-through;
+}
 
+/* Form - Add Todo */
+#form-add {
+    margin: 4rem auto;
+    text-align: center;
+}
+input, button {
+    padding: 1rem 2rem;
+    border: 2px solid black;
+    border-radius: 0.8rem;
+    font-size: 1.5rem;
+}
+input {
+    margin-right: 1rem;
+}
+button {
+    background-color: #efefef;
+    cursor: pointer;
+}
+
+
+/* Todos List */
+#todos-list {
+    padding: 2rem;
+    background-color: #f4f7f7;
+    border-radius: 0.5rem;
+}
+#todos-list li {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+    padding: 1rem;
+    cursor: pointer;
+}

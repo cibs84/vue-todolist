@@ -15,7 +15,25 @@ var app = new Vue(
     {
         el: '#root',
         data: {
-            dataTest: 'Hello!!',
+            allTodos: [
+                {
+                    text: 'Fare i compiti',
+                    done: false
+                },
+                {
+                    text: 'Fare la spesa',
+                    done: true
+                },
+                {
+                    text: 'Fare il bucato',
+                    done: false
+                }
+            ]
+        },
+        methods: {
+            toggleClassChecked(index) {
+                this.allTodos[index].done = !this.allTodos[index].done;
+            }
         }
     }
 );
