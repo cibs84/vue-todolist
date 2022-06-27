@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <!-- Vue.js -->
+    <div id="root">
+        
+        <!-- Form - Add Todo -->
+        <div id="form-add">
+            <input required type="text" placeholder="Nuovo Todo" v-model="inputTodo" @keyup.enter="addNewTodo()">
+            <button @click="addNewTodo()">Aggiungi</button>
+        </div>
+
+        <!-- Todos List -->
+        <div class="container">
+            <ul id="todos-list">
+
+                <!-- Todos Item -->
+                <li v-for="(singleTodo, indexSingleTodo) in allTodos" class="todos-item" :class="{ 'checked': singleTodo.done === true }">
+                    <span @click="toggleClassChecked(indexSingleTodo)">{{singleTodo.text}}</span>
+                    <span class="cross-delete" @click="deleteTodo(indexSingleTodo)">
+                        <i class="fa-solid fa-xmark"></i>
+                    </span>
+                </li>
+
+                <!-- Message empty list -->
+                <li id="msg-empty-list" v-if="allTodos.length < 1">A quanto pare non abbiamo niente di bello da fare.</li>
+            </ul>
+        </div>
+
+    </div>
+    <!--------------- end - Vue.js --------------->
+
+    <script src="js/script.js"></script>
+</body>
+</html>
