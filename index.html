@@ -17,8 +17,8 @@
         
         <!-- Form - Add Todo -->
         <div id="form-add">
-            <input type="text" placeholder="Nuovo Todo">
-            <button>Aggiungi</button>
+            <input required type="text" placeholder="Nuovo Todo" v-model="inputTodo">
+            <button @click="addNewTodo()">Aggiungi</button>
         </div>
 
         <!-- Todos List -->

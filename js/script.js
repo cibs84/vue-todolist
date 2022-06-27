@@ -28,14 +28,18 @@ var app = new Vue(
                     text: 'Fare il bucato',
                     done: false
                 }
-            ]
+            ],
+            inputTodo: '',
         },
         methods: {
-            toggleClassChecked(index) {
-                this.allTodos[index].done = !this.allTodos[index].done;
-            },
             deleteTodo(index) {
                 this.allTodos.splice(index, 1);
+            },
+            addNewTodo() {
+                if (this.inputTodo !== '') {
+                    this.allTodos.push({text: this.inputTodo, done: false});
+                    this.inputTodo = '';
+                }
             }
         }
     }
