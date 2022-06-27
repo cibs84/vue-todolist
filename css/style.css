@@ -52,5 +52,7 @@ button {
     justify-content: space-between;
     border-bottom: 1px solid lightgray;
     padding: 1rem;
+}
+#todos-list li span {
     cursor: pointer;
 }

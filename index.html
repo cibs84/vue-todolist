@@ -26,9 +26,9 @@
             <ul id="todos-list">
 
                 <!-- Todos Item -->
-                <li v-for="(singleTodo, indexSingleTodo) in allTodos" class="todos-item" :class="{ 'checked': singleTodo.done === true }" @click="toggleClassChecked(indexSingleTodo)">
-                    {{singleTodo.text}}
-                    <span>
+                <li v-for="(singleTodo, indexSingleTodo) in allTodos" class="todos-item" :class="{ 'checked': singleTodo.done === true }">
+                    <span @click="toggleClassChecked(indexSingleTodo)">{{singleTodo.text}}</span>
+                    <span class="cross-delete" @click="deleteTodo(indexSingleTodo)">
                         <i class="fa-solid fa-xmark"></i>
                     </span>
                 </li>

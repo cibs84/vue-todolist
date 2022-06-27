@@ -33,6 +33,9 @@ var app = new Vue(
         methods: {
             toggleClassChecked(index) {
                 this.allTodos[index].done = !this.allTodos[index].done;
+            },
+            deleteTodo(index) {
+                this.allTodos.splice(index, 1);
             }
         }
     }
