@@ -39,8 +39,9 @@ var app = new Vue(
                 this.allTodos.splice(index, 1);
             },
             addNewTodo() {
-                if (this.inputTodo !== '') {
-                    this.allTodos.push({text: this.inputTodo, done: false});
+                const inputTodoTrimmed = this.inputTodo.trim();
+                if (inputTodoTrimmed !== '') {
+                    this.allTodos.push({text: inputTodoTrimmed, done: false});
                     this.inputTodo = '';
                 }
             }
